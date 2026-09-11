@@ -10,24 +10,16 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-      - name: 🛎️ Checkout
-        uses: actions/checkout@v7
-
-      - run: corepack enable
-    
-      - name: 🐢 Setup Node
-        uses: actions/setup-node@v7
+      - uses: actions/checkout@v7
+      - uses: pnpm/setup@v2
         with:
-          node-version: lts/*
-          cache: 'pnpm'
-
-      - name: Install Wrangler
-        run: pnpm i -D wrangler@latest
+          runtime: node@lts
+          cache: true
 
       - name: Build Project
         run: node --run build
 
-      - name: ☁️ Setup Cloudflare & Deploy Worker
+      - name: 🚀 Setup Cloudflare & Deploy Worker
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
