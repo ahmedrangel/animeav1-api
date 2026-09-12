@@ -59,6 +59,7 @@ defineRouteMeta({
                     cover: { type: "string" },
                     synopsis: { type: "string" },
                     genres: { type: "array", items: { type: "string" } },
+                    year: { type: "number" },
                     next_airing_episode: { type: "string" },
                     episodes: {
                       type: "array",
@@ -96,6 +97,7 @@ defineRouteMeta({
                     "cover",
                     "synopsis",
                     "genres",
+                    "year",
                     "episodes",
                     "url"
                   ]
