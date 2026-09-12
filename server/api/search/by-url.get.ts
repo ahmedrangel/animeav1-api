@@ -1,4 +1,4 @@
-import { searchAnimesByURL } from "animeflv-scraper";
+import { searchAnimesByURL } from "animeav1-scraper";
 
 export default defineEventHandler(async (event) => {
   const { url } = getQuery(event) as { url: string };
@@ -26,7 +26,7 @@ defineRouteMeta({
         name: "url",
         in: "query",
         summary: "La URL de consulta.",
-        example: "https://www3.animeflv.net/browse?genre%5B%5D=shounen&type%5B%5D=tv&order=default&page=2",
+        example: "https://animeav1.com/catalogo?genre=shounen&category=tv-anime&order=default&page=2",
         required: true,
         schema: {
           type: "string",
@@ -36,7 +36,7 @@ defineRouteMeta({
     ],
     responses: {
       200: {
-        description: "Retorna un objeto con varios atributos, incluyendo \"previousPage\" y \"nextPage\", que indican si hay más páginas de resultados disponibles antes o después de la página actual. El atributo \"foundPages\" indica cuántas páginas de resultados se encontraron en total. El atributo \"data\" es un arreglo que contiene objetos con información detallada sobre cada anime encontrado. Cada objeto contiene información como el título, la portada, el sinopsis, la calificación, el slug, el tipo y la url del anime.",
+        description: "Retorna un objeto con varios atributos, incluyendo \"previousPage\" y \"nextPage\", que indican si hay más páginas de resultados disponibles antes o después de la página actual. El atributo \"foundPages\" indica cuántas páginas de resultados se encontraron en total. El atributo \"data\" es un arreglo que contiene objetos con información detallada sobre cada anime encontrado. Cada objeto contiene información como el título, la portada, el sinopsis, el slug, el tipo y la url del anime.",
         content: {
           "application/json": {
             schema: {
@@ -59,12 +59,11 @@ defineRouteMeta({
                           title: { type: "string" },
                           cover: { type: "string" },
                           synopsis: { type: "string" },
-                          rating: { type: "string" },
                           slug: { type: "string" },
                           type: { type: "string" },
                           url: { type: "string" }
                         },
-                        required: ["title", "cover", "synopsis", "rating", "slug", "type", "url"]
+                        required: ["title", "cover", "synopsis", "slug", "type", "url"]
                       }
                     }
                   },

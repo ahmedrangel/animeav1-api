@@ -1,9 +1,9 @@
-import { getEpisode } from "animeflv-scraper";
+import { getEpisode } from "animeav1-scraper";
 
 export default defineCachedEventHandler(async (event) => {
-  const { slug } = getRouterParams(event) as { slug: string };
-  const episode = await getEpisode(slug);
-  if (!episode) {
+  const { slug, episode } = getRouterParams(event) as { slug: string, episode: string };
+  const data = await getEpisode(slug, Number(episode));
+  if (!data) {
     throw createError({
       statusCode: 404,
       message: "No se ha encontrado el episodio",
@@ -12,7 +12,7 @@ export default defineCachedEventHandler(async (event) => {
   }
   return {
     success: true,
-    data: episode
+    data: data
   };
 }, {
   swr: false,
@@ -20,31 +20,41 @@ export default defineCachedEventHandler(async (event) => {
   name: "episode",
   group: "anime",
   getKey: (event) => {
-    const { slug } = getRouterParams(event) as { slug: string };
-    return slug;
+    const { slug, episode } = getRouterParams(event) as { slug: string, episode: string };
+    return `${slug}-${episode}`;
   }
 });
 
 defineRouteMeta({
   openAPI: {
     tags: ["Anime"],
-    summary: "Episodio por Slug",
-    description: "Obtiene un episodio especificado por \"slug\".",
+    summary: "Episodio por Slug y Número",
+    description: "Obtiene un episodio especificado por \"slug\" y \"episode\".",
     parameters: [
       {
         name: "slug",
         in: "path",
-        summary: "Slug que identifica el episodio.",
-        example: "boruto-naruto-next-generations-tv-65",
+        summary: "Slug que identifica el anime.",
+        example: "boruto-naruto-next-generations",
         required: true,
         schema: {
           type: "string"
+        }
+      },
+      {
+        name: "episode",
+        in: "path",
+        summary: "Número de episodio.",
+        example: 65,
+        required: true,
+        schema: {
+          type: "number"
         }
       }
     ],
     responses: {
       200: {
-        description: "Retorna un objeto que contiene información como el título, número y un arreglo de servers con nombres, url de descarga y url de embed.",
+        description: "Retorna un contiene información como el título, número y un arreglo de servers con nombres, url de descarga y url de embed.",
         content: {
           "application/json": {
             schema: {
@@ -56,20 +66,30 @@ defineRouteMeta({
                   properties: {
                     title: { type: "string" },
                     number: { type: "number" },
-                    servers: {
+                    embeds: {
                       type: "array",
                       items: {
                         type: "object",
                         properties: {
                           name: { type: "string" },
-                          download: { type: "string" },
-                          embed: { type: "string" }
+                          url: { type: "string" }
                         },
-                        required: ["name"]
+                        required: ["name", "url"]
+                      }
+                    },
+                    downloads: {
+                      type: "array",
+                      items: {
+                        type: "object",
+                        properties: {
+                          name: { type: "string" },
+                          url: { type: "string" }
+                        },
+                        required: ["name", "url"]
                       }
                     }
                   },
-                  required: ["title", "number", "servers"]
+                  required: ["title", "number", "embeds", "downloads"]
                 }
               },
               required: ["success", "data"]

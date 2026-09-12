@@ -1,4 +1,4 @@
-import { searchAnime } from "animeflv-scraper";
+import { searchAnime } from "animeav1-scraper";
 
 export default defineEventHandler(async (event) => {
   const { query, page } = getQuery(event) as { query: string, page: string };
@@ -45,7 +45,7 @@ defineRouteMeta({
     ],
     responses: {
       200: {
-        description: "Retorna un objeto con varios atributos, incluyendo \"previousPage\" y \"nextPage\", que indican si hay más páginas de resultados disponibles antes o después de la página actual. El atributo \"foundPages\" indica cuántas páginas de resultados se encontraron en total. El atributo \"data\" es un arreglo que contiene objetos con información detallada sobre cada anime encontrado. Cada objeto contiene información como el título, la portada, el sinopsis, la calificación, el slug, el tipo y la url del anime.",
+        description: "Retorna un objeto con varios atributos, incluyendo \"previousPage\" y \"nextPage\", que indican si hay más páginas de resultados disponibles antes o después de la página actual. El atributo \"foundPages\" indica cuántas páginas de resultados se encontraron en total. El atributo \"data\" es un arreglo que contiene objetos con información detallada sobre cada anime encontrado. Cada objeto contiene información como el título, la portada, el sinopsis, el slug, el tipo y la url del anime.",
         content: {
           "application/json": {
             schema: {
@@ -68,12 +68,11 @@ defineRouteMeta({
                           title: { type: "string" },
                           cover: { type: "string" },
                           synopsis: { type: "string" },
-                          rating: { type: "string" },
                           slug: { type: "string" },
                           type: { type: "string" },
                           url: { type: "string" }
                         },
-                        required: ["title", "cover", "synopsis", "rating", "slug", "type", "url"]
+                        required: ["title", "cover", "synopsis", "slug", "type", "url"]
                       }
                     }
                   },

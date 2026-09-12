@@ -1,4 +1,4 @@
-import { getAnimeInfo } from "animeflv-scraper";
+import { getAnimeInfo } from "animeav1-scraper";
 
 export default defineCachedEventHandler(async (event) => {
   const { slug } = getRouterParams(event) as { slug: string };
@@ -19,7 +19,7 @@ export default defineCachedEventHandler(async (event) => {
   maxAge: 86400,
   name: "info",
   group: "anime",
-  getKey: event => getRouterParams(event).slug
+  getKey: event => getRouterParams(event).slug!
 });
 
 defineRouteMeta({
@@ -30,7 +30,7 @@ defineRouteMeta({
         name: "slug",
         in: "path",
         summary: "Slug que identifica el anime.",
-        example: "boruto-naruto-next-generations-tv",
+        example: "boruto-naruto-next-generations",
         required: true,
         schema: {
           type: "string"

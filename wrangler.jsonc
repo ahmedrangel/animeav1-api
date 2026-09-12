@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "animeflv",
-  "compatibility_date": "2026-08-12",
+  "name": "animeav1",
+  "compatibility_date": "2026-09-12",
   "main": ".output/server/index.mjs",
   "compatibility_flags": ["nodejs_compat"],
   "observability": { "enabled": true },

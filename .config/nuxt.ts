@@ -60,7 +60,7 @@ export default defineNuxtConfig({
   experimental: {
     typedPages: true
   },
-  compatibilityDate: "2026-08-12",
+  compatibilityDate: "2026-09-12",
   nitro: {
     prerender: {
       crawlLinks: true

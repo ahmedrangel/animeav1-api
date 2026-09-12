@@ -1,4 +1,4 @@
-import { searchAnimesByFilter, GenreEnum, StatusEnum, TypeEnum, OrderEnum } from "animeflv-scraper";
+import { searchAnimesByFilter, GenreEnum, StatusEnum, TypeEnum, OrderEnum } from "animeav1-scraper";
 
 const genres = Object.values(GenreEnum);
 const statuses = Object.values(StatusEnum);
@@ -36,7 +36,7 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const invalid_statuses = body?.statuses?.filter((s: number) => !statuses?.includes(s));
+  const invalid_statuses = body?.statuses?.filter((s: string) => !statuses?.includes(s));
   if (invalid_statuses?.length) {
     throw createError({
       statusCode: 400,
@@ -54,14 +54,17 @@ export default defineEventHandler(async (event) => {
   }
 
   const orderKeyMap: Record<string, string> = {
-    default: "Por Defecto",
-    updated: "Recientemente Actualizados",
-    added: "Recientemente Agregados",
-    title: "Nombre A-Z",
-    rating: "Calificación"
+    default: "Predeterminado",
+    score: "Puntuación",
+    popular: "Populares",
+    title: "Título",
+    latest_added: "Últimos Agregados",
+    latest_released: "Últimos Estrenos"
   };
 
-  const mappedOrder = orderKeyMap[order];
+  const mappedOrder = orderKeyMap[order || "default"];
+
+  console.log(`Mapped order: ${mappedOrder}`);
 
   const search = await searchAnimesByFilter({ ...body, order: mappedOrder, page });
   if (!search || !search?.media?.length) {
@@ -91,70 +94,45 @@ defineRouteMeta({
               types: {
                 type: "array",
                 description: "Tipos de anime.",
-                example: ["tv", "movie", "special", "ova"],
+                example: ["tv-anime"],
                 items: {
                   type: "string",
-                  enum: ["tv", "movie", "special", "ova"]
+                  enum: ["tv-anime", "pelicula", "especial", "ova", "ona"]
                 }
               },
               genres: {
                 type: "array",
                 description: "Géneros de anime.",
-                example: ["accion", "artes-marciales", "aventura", "carreras"],
+                example: ["accion", "aventura", "ciencia-ficcion"],
                 items: {
                   type: "string",
                   enum: [
-                    "accion",
-                    "artes-marciales",
-                    "aventura",
-                    "carreras",
-                    "ciencia-ficcion",
-                    "comedia",
-                    "demencia",
-                    "demonios",
-                    "deportes",
-                    "drama",
-                    "ecchi",
-                    "escolares",
-                    "espacial",
-                    "fantasia",
-                    "harem",
-                    "historico",
-                    "infantil",
-                    "josei",
-                    "juegos",
-                    "magia",
-                    "mecha",
-                    "militar",
-                    "misterio",
-                    "musica",
-                    "parodia",
-                    "policia",
-                    "psicologico",
-                    "recuentos-de-la-vida",
-                    "romance",
-                    "samurai",
-                    "seinen",
-                    "shoujo",
-                    "shounen",
-                    "sobrenatural",
-                    "superpoderes",
-                    "suspenso",
-                    "terror",
-                    "vampiros",
-                    "yaoi",
-                    "yuri"
+                    "accion", "aventura", "ciencia-ficcion",
+                    "comedia", "deportes", "drama",
+                    "fantasia", "misterio", "recuentos-de-la-vida",
+                    "romance", "seinen", "shoujo",
+                    "shounen", "sobrenatural", "suspenso",
+                    "terror", "antropomorfico", "artes-marciales",
+                    "carreras", "detectives", "ecchi",
+                    "elenco-adulto", "escolares", "espacial",
+                    "gore", "gourmet", "harem",
+                    "historico", "idols-hombre", "idols-mujer",
+                    "infantil", "isekai", "josei",
+                    "juegos-estrategia", "mahou-shoujo", "mecha",
+                    "militar", "mitologia", "musica",
+                    "parodia", "psicologico", "samurai",
+                    "shoujo-ai", "shounen-ai", "superpoderes",
+                    "vampiros"
                   ]
-                },
-                maxItems: 4
+                }
               },
               statuses: {
                 type: "array",
-                description: "Estados de anime. (1: En emisión, 2: Finalizado, 3: Próximamente)",
-                example: [1, 2, 3],
+                description: "Estados de anime.",
+                example: ["emision", "finalizado", "proximamente"],
                 items: {
-                  type: "number",
-                  enum: [1, 2, 3]
+                  type: "string",
+                  enum: ["emision", "finalizado", "proximamente"]
                 }
               }
             }
@@ -171,7 +149,8 @@ defineRouteMeta({
         example: "default",
         schema: {
           type: "string",
-          enum: ["default", "updated", "added", "title", "rating"]
+          enum: ["default", "score", "popular", "title", "latest_added", "latest_released"],
+          default: "default"
         }
       },
       {
@@ -181,13 +160,14 @@ defineRouteMeta({
         example: 1,
         required: false,
         schema: {
-          type: "number"
+          type: "number",
+          default: 1
         }
       }
     ],
     responses: {
       200: {
-        description: "Retorna un objeto con varios atributos, incluyendo \"previousPage\" y \"nextPage\", que indican si hay más páginas de resultados disponibles antes o después de la página actual. El atributo \"foundPages\" indica cuántas páginas de resultados se encontraron en total. El atributo \"data\" es un arreglo que contiene objetos con información detallada sobre cada anime encontrado. Cada objeto contiene información como el título, la portada, el sinopsis, la calificación, el slug, el tipo y la url del anime.",
+        description: "Retorna un objeto con varios atributos, incluyendo \"previousPage\" y \"nextPage\", que indican si hay más páginas de resultados disponibles antes o después de la página actual. El atributo \"foundPages\" indica cuántas páginas de resultados se encontraron en total. El atributo \"data\" es un arreglo que contiene objetos con información detallada sobre cada anime encontrado. Cada objeto contiene información como el título, la portada, el sinopsis, el slug, el tipo y la url del anime.",
         content: {
           "application/json": {
             schema: {
@@ -210,12 +190,11 @@ defineRouteMeta({
                           title: { type: "string" },
                           cover: { type: "string" },
                           synopsis: { type: "string" },
-                          rating: { type: "string" },
                           slug: { type: "string" },
                           type: { type: "string" },
                           url: { type: "string" }
                         },
-                        required: ["title", "cover", "synopsis", "rating", "slug", "type", "url"]
+                        required: ["title", "cover", "synopsis", "slug", "type", "url"]
                       }
                     }
                   },

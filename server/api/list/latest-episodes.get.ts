@@ -1,4 +1,4 @@
-import { getLatest } from "animeflv-scraper";
+import { getLatest } from "animeav1-scraper";
 
 export default defineEventHandler(async () => {
   const latest = await getLatest();
