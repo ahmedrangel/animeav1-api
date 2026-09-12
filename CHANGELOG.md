@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v3.0.1
+
+[compare changes](https://github.com/ahmedrangel/animeav1-api/compare/v3.0.0...v3.0.1)
+
+### 📖 Documentation
+
+- **api:** Add year to anime response schema ([7d3c61c](https://github.com/ahmedrangel/animeav1-api/commit/7d3c61c))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v3.0.0
 
 [compare changes](https://github.com/ahmedrangel/animeav1-api/compare/v2.8.2...v3.0.0)

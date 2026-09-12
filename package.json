@@ -1,6 +1,6 @@
 {
   "name": "animeav1-api",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Unofficial AnimeAV1 REST API",
   "private": true,
   "type": "module",
