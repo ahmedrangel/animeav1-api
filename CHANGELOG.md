@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v3.0.0
+
+[compare changes](https://github.com/ahmedrangel/animeav1-api/compare/v2.8.2...v3.0.0)
+
+### 🚀 Enhancements
+
+- **api:** ⚠️  Migrate AnimeFLV API to AnimeAV1 ([bfbd575](https://github.com/ahmedrangel/animeav1-api/commit/bfbd575))
+
+### 🤖 CI
+
+- Drop corepack and migrate actions to use pnpm/setup ([5702c90](https://github.com/ahmedrangel/animeav1-api/commit/5702c90))
+
+#### ⚠️ Breaking Changes
+
+- **api:** ⚠️  Migrate AnimeFLV API to AnimeAV1 ([bfbd575](https://github.com/ahmedrangel/animeav1-api/commit/bfbd575))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.8.2
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.8.1...v2.8.2)
