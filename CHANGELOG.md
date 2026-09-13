@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v3.1.0
+
+[compare changes](https://github.com/ahmedrangel/animeav1-api/compare/v3.0.1...v3.1.0)
+
+### 🚀 Enhancements
+
+- **api:** Document expanded anime fields ([3d6cbab](https://github.com/ahmedrangel/animeav1-api/commit/3d6cbab))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v3.0.1
 
 [compare changes](https://github.com/ahmedrangel/animeav1-api/compare/v3.0.0...v3.0.1)
