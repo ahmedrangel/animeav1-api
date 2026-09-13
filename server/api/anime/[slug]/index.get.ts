@@ -60,6 +60,11 @@ defineRouteMeta({
                     synopsis: { type: "string" },
                     genres: { type: "array", items: { type: "string" } },
                     year: { type: "number" },
+                    start_date: { type: "string" },
+                    end_date: { type: "string" },
+                    malId: { type: "number" },
+                    mature: { type: "boolean" },
+                    votes: { type: "number" },
                     next_airing_episode: { type: "string" },
                     episodes: {
                       type: "array",
@@ -80,8 +85,11 @@ defineRouteMeta({
                         type: "object",
                         properties: {
                           title: { type: "string" },
-                          relation: { type: "string" },
                           slug: { type: "string" },
+                          relation: { type: "string" },
+                          cover: { type: "string" },
+                          year: { type: "number" },
+                          start_date: { type: "string" },
                           url: { type: "string" }
                         },
                         required: ["title", "slug", "url"]
@@ -99,7 +107,12 @@ defineRouteMeta({
                     "genres",
                     "year",
                     "episodes",
-                    "url"
+                    "url",
+                    "start_date",
+                    "end_date",
+                    "malId",
+                    "mature",
+                    "votes"
                   ]
                 }
               }

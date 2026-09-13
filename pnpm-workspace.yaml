@@ -1,6 +1,5 @@
 minimumReleaseAge: 0
 allowBuilds:
-  '@parcel/watcher': set this to true or false
   esbuild: false
   unrs-resolver: false
   vue-demi: false

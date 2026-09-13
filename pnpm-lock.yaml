@@ -168,10 +168,6 @@ overrides:
 importers:
 
   .:
-    dependencies:
-      animeav1-scraper:
-        specifier: ^0.3.3
-        version: 0.3.3
     devDependencies:
       '@nuxt/eslint':
         specifier: ^1.17.0
@@ -180,17 +176,20 @@ importers:
         specifier: ^0.10.8
         version: 0.10.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.11.3)(db0@0.3.4)(ioredis@5.11.1(supports-color@10.2.2))(magic-string@1.3.1)(magicast@0.5.5)(rolldown@1.2.8)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.2)(vite@8.3.0(@types/node@22.20.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))
       '@nuxtjs/sitemap':
-        specifier: ^8.5.0
-        version: 8.5.0(39ba541c9e24139d7107ef882badd6bc)
+        specifier: ^8.5.1
+        version: 8.5.1(99f93b3180609ff6ac86f3421c5725cd)
       '@scalar/nuxt':
         specifier: ^0.6.67
-        version: 0.6.67(change-case@5.4.4)(magic-string@1.3.1)(magicast@0.5.5)(rolldown@1.2.8)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.2)(vite@8.3.0(@types/node@22.20.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))(zod@4.6.2)
+        version: 0.6.67(change-case@5.4.4)(magic-string@1.3.1)(magicast@0.5.5)(rolldown@1.2.8)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.2)(vite@8.3.0(@types/node@22.20.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))(zod@4.6.4)
       '@stylistic/eslint-plugin':
         specifier: ^5.10.0
         version: 5.10.0(eslint@10.10.0(jiti@2.7.0)(supports-color@10.2.2))
       '@types/node':
         specifier: ^22.20.2
         version: 22.20.2
+      animeav1-scraper:
+        specifier: ^0.4.2
+        version: 0.4.2
       changelogen:
         specifier: ^0.6.2
         version: 0.6.2(magicast@0.5.5)
@@ -204,8 +203,8 @@ importers:
         specifier: ^4.131.1
         version: 4.131.1(@types/node@22.20.2)
       zod:
-        specifier: ^4.6.2
-        version: 4.6.2
+        specifier: ^4.6.4
+        version: 4.6.4
 
 packages:
 
@@ -1341,8 +1340,8 @@ packages:
       '@vercel/blob':
         optional: true
 
-  '@nuxtjs/sitemap@8.5.0':
-    resolution: {integrity: sha512-DfhUZzP29Wzr9ro3L2mBpYUocmLBKvGDAGThvLdHWKGR1kBFnbY5VBhJaZG4Jeuba5gVKCpDzH9PhKNW11d46Q==}
+  '@nuxtjs/sitemap@8.5.1':
+    resolution: {integrity: sha512-CpF1zuf1XWGA9qwDy6lH57cVbHNoq2vF6WsEwQiR4aJD1jPkI8udqYZQt2OwQUZTNw3uu4UgGoKDYK6OoCFjcw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       zod: '>=3'
@@ -2504,8 +2503,8 @@ packages:
   ajv@6.15.0:
     resolution: {integrity: sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw==}
 
-  animeav1-scraper@0.3.3:
-    resolution: {integrity: sha512-P7ewJ0dLptZb8z7mhUT2Bbbmick51cq80RutLFMBoLzQ5kzsPR2yvpym/H+tTJIazbCc1L9AfPRKg2B3xypFyQ==}
+  animeav1-scraper@0.4.2:
+    resolution: {integrity: sha512-YdFdFsh1JUODjoKLXeNu7YWLb0f7gHN/6ptCzVqL6v3UwDuKNKdcuO9Visq7Oreb/2chW4QGa1Q+mEu2vgtNzg==}
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -5372,10 +5371,6 @@ packages:
     resolution: {integrity: sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==}
     engines: {node: '>=20.18.1'}
 
-  undici@7.29.1:
-    resolution: {integrity: sha512-RYONW2MeafgYlkVOKYKkA/Ag7BmXqgIWCa8t1m0JcxrQg9pI9lEqRhAOruOBCbAohOa/gkCF+iPi9hrgvTzu6Q==}
-    engines: {node: '>=20.18.1'}
-
   undici@8.10.2:
     resolution: {integrity: sha512-/y4/bH9YNU5hi9NIrpOuvGXFcxrj3CMrV+/AYpowAYTpHn8gX/XPFjNy766FPoYY0miQhdW977JFWKGNhBdwyQ==}
     engines: {node: '>=22.19.0'}
@@ -5910,36 +5905,36 @@ packages:
     resolution: {integrity: sha512-zK7YHHz4ZXpW89AHXUPbQVGKI7uvkd3hzusTdotCg1UxyaVtg0zFJSTfW/Dq5f7OBBVnq6cZIaC8Ti4hb6dtCA==}
     engines: {node: '>= 14'}
 
-  zod@4.6.2:
-    resolution: {integrity: sha512-lh5RCAGFa1Cm2hjtNwLQhSs/AsqdWnTQaBER9fEwN/88pSh7KOtJavtBx/0VlkN/uFd61SwYmljLMDAsHlvzBQ==}
+  zod@4.6.4:
+    resolution: {integrity: sha512-AXSD6hvGdvRjajG/l1cC+d6IrhH+sjmPKtYeQdJIK8MFJl3LyClzS+o/YsVC+zQZPupAaeH5skwwm8YqYH7BqA==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
 
-  '@ai-sdk/gateway@3.0.13(zod@4.6.2)':
+  '@ai-sdk/gateway@3.0.13(zod@4.6.4)':
     dependencies:
       '@ai-sdk/provider': 3.0.2
-      '@ai-sdk/provider-utils': 4.0.5(zod@4.6.2)
+      '@ai-sdk/provider-utils': 4.0.5(zod@4.6.4)
       '@vercel/oidc': 3.1.0
-      zod: 4.6.2
+      zod: 4.6.4
 
-  '@ai-sdk/provider-utils@4.0.5(zod@4.6.2)':
+  '@ai-sdk/provider-utils@4.0.5(zod@4.6.4)':
     dependencies:
       '@ai-sdk/provider': 3.0.2
       '@standard-schema/spec': 1.1.0
       eventsource-parser: 3.1.1
-      zod: 4.6.2
+      zod: 4.6.4
 
   '@ai-sdk/provider@3.0.2':
     dependencies:
       json-schema: 0.4.0
 
-  '@ai-sdk/vue@3.0.33(vue@3.5.42(typescript@6.0.3))(zod@4.6.2)':
+  '@ai-sdk/vue@3.0.33(vue@3.5.42(typescript@6.0.3))(zod@4.6.4)':
     dependencies:
-      '@ai-sdk/provider-utils': 4.0.5(zod@4.6.2)
-      ai: 6.0.33(zod@4.6.2)
+      '@ai-sdk/provider-utils': 4.0.5(zod@4.6.4)
+      ai: 6.0.33(zod@4.6.4)
       swrv: 1.2.0(vue@3.5.42(typescript@6.0.3))
       vue: 3.5.42(typescript@6.0.3)
     transitivePeerDependencies:
@@ -6847,12 +6842,12 @@ snapshots:
 
   '@modelcontextprotocol/core@2.0.0':
     dependencies:
-      zod: 4.6.2
+      zod: 4.6.4
 
   '@modelcontextprotocol/server@2.0.0':
     dependencies:
       '@modelcontextprotocol/core': 2.0.0
-      zod: 4.6.2
+      zod: 4.6.4
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     optional: true
@@ -7334,7 +7329,7 @@ snapshots:
       ufo: 1.6.4
       uncrypto: 0.1.3
       unstorage: 1.17.5(db0@0.3.4)(ioredis@5.11.1(supports-color@10.2.2))
-      zod: 4.6.2
+      zod: 4.6.4
     transitivePeerDependencies:
       - '@arethetypeswrong/core'
       - '@azure/app-configuration'
@@ -7373,13 +7368,13 @@ snapshots:
       - uploadthing
       - vue-tsc
 
-  '@nuxtjs/sitemap@8.5.0(39ba541c9e24139d7107ef882badd6bc)':
+  '@nuxtjs/sitemap@8.5.1(99f93b3180609ff6ac86f3421c5725cd)':
     dependencies:
       '@nuxt/kit': 4.5.2(magic-string@1.3.1)(magicast@0.5.5)(rolldown@1.2.8)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.2)(vite@8.3.0(@types/node@22.20.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))
       consola: 3.4.2
       defu: 6.1.7
-      nuxt-site-config: 4.2.3(39ba541c9e24139d7107ef882badd6bc)
-      nuxtseo-shared: 5.3.16(6a4c1aed85c6772971437b995b7f2228)
+      nuxt-site-config: 4.2.3(99f93b3180609ff6ac86f3421c5725cd)
+      nuxtseo-shared: 5.3.16(bc8332efffacffa608f65b8fdcf5a684)
       ofetch: 1.5.1
       pathe: 2.0.3
       pkg-types: 2.3.3
@@ -7388,7 +7383,7 @@ snapshots:
       ufo: 1.6.4
       ultrahtml: 1.7.0
     optionalDependencies:
-      zod: 4.6.2
+      zod: 4.6.4
     transitivePeerDependencies:
       - '@nuxt/schema'
       - magic-string
@@ -7730,9 +7725,9 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.63.2':
     optional: true
 
-  '@scalar/agent-chat@0.12.30(change-case@5.4.4)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(zod@4.6.2)':
+  '@scalar/agent-chat@0.12.30(change-case@5.4.4)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(zod@4.6.4)':
     dependencies:
-      '@ai-sdk/vue': 3.0.33(vue@3.5.42(typescript@6.0.3))(zod@4.6.2)
+      '@ai-sdk/vue': 3.0.33(vue@3.5.42(typescript@6.0.3))(zod@4.6.4)
       '@scalar/api-client': 3.18.0(change-case@5.4.4)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)
       '@scalar/components': 0.29.1(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)
       '@scalar/helpers': 0.11.3
@@ -7746,7 +7741,7 @@ snapshots:
       '@scalar/validation': 0.6.3
       '@scalar/workspace-store': 0.60.0(typescript@6.0.3)
       '@vueuse/core': 13.9.0(vue@3.5.42(typescript@6.0.3))
-      ai: 6.0.33(zod@4.6.2)
+      ai: 6.0.33(zod@4.6.4)
       js-base64: 3.9.3
       neverpanic: 0.0.8
       truncate-json: 3.0.1
@@ -7799,7 +7794,7 @@ snapshots:
       set-cookie-parser: 3.1.0
       vue: 3.5.42(typescript@6.0.3)
       yaml: 2.9.1
-      zod: 4.6.2
+      zod: 4.6.4
     transitivePeerDependencies:
       - '@vue/composition-api'
       - async-validator
@@ -7816,10 +7811,10 @@ snapshots:
       - typescript
       - universal-cookie
 
-  '@scalar/api-reference@1.68.0(change-case@5.4.4)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(zod@4.6.2)':
+  '@scalar/api-reference@1.68.0(change-case@5.4.4)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(zod@4.6.4)':
     dependencies:
       '@headlessui/vue': 1.7.23(vue@3.5.42(typescript@6.0.3))
-      '@scalar/agent-chat': 0.12.30(change-case@5.4.4)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(zod@4.6.2)
+      '@scalar/agent-chat': 0.12.30(change-case@5.4.4)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(zod@4.6.4)
       '@scalar/api-client': 3.18.0(change-case@5.4.4)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)
       '@scalar/blocks': 0.1.16(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)
       '@scalar/code-highlight': 0.4.5(supports-color@10.2.2)
@@ -7941,11 +7936,11 @@ snapshots:
       pathe: 2.0.3
       yaml: 2.9.1
 
-  '@scalar/nuxt@0.6.67(change-case@5.4.4)(magic-string@1.3.1)(magicast@0.5.5)(rolldown@1.2.8)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.2)(vite@8.3.0(@types/node@22.20.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))(zod@4.6.2)':
+  '@scalar/nuxt@0.6.67(change-case@5.4.4)(magic-string@1.3.1)(magicast@0.5.5)(rolldown@1.2.8)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.2)(vite@8.3.0(@types/node@22.20.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))(zod@4.6.4)':
     dependencies:
       '@nuxt/kit': 4.5.2(magic-string@1.3.1)(magicast@0.5.5)(rolldown@1.2.8)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.2)(vite@8.3.0(@types/node@22.20.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))
       '@scalar/api-client': 3.18.0(change-case@5.4.4)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)
-      '@scalar/api-reference': 1.68.0(change-case@5.4.4)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(zod@4.6.2)
+      '@scalar/api-reference': 1.68.0(change-case@5.4.4)(supports-color@10.2.2)(tailwindcss@4.3.3)(typescript@6.0.3)(zod@4.6.4)
       '@scalar/types': 0.19.0
       '@scalar/use-hooks': 0.4.11(typescript@6.0.3)
       vue: 3.5.42(typescript@6.0.3)
@@ -8027,7 +8022,7 @@ snapshots:
       '@scalar/helpers': 0.11.3
       nanoid: 5.1.16
       type-fest: 5.9.0
-      zod: 4.6.2
+      zod: 4.6.4
 
   '@scalar/use-codemirror@0.14.15(typescript@6.0.3)':
     dependencies:
@@ -8598,13 +8593,13 @@ snapshots:
 
   agent-base@7.1.4: {}
 
-  ai@6.0.33(zod@4.6.2):
+  ai@6.0.33(zod@4.6.4):
     dependencies:
-      '@ai-sdk/gateway': 3.0.13(zod@4.6.2)
+      '@ai-sdk/gateway': 3.0.13(zod@4.6.4)
       '@ai-sdk/provider': 3.0.2
-      '@ai-sdk/provider-utils': 4.0.5(zod@4.6.2)
+      '@ai-sdk/provider-utils': 4.0.5(zod@4.6.4)
       '@opentelemetry/api': 1.9.0
-      zod: 4.6.2
+      zod: 4.6.4
 
   ajv@6.15.0:
     dependencies:
@@ -8613,7 +8608,7 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  animeav1-scraper@0.3.3:
+  animeav1-scraper@0.4.2:
     dependencies:
       cheerio: 1.2.0
       ofetch: 1.5.1
@@ -8868,7 +8863,7 @@ snapshots:
       parse5: 7.3.0
       parse5-htmlparser2-tree-adapter: 7.1.0
       parse5-parser-stream: 7.1.2
-      undici: 7.29.1
+      undici: 7.29.0
       whatwg-mimetype: 4.0.0
 
   chokidar@5.0.0:
@@ -10781,7 +10776,7 @@ snapshots:
       - unplugin
       - vue
 
-  nuxt-site-config@4.2.3(39ba541c9e24139d7107ef882badd6bc):
+  nuxt-site-config@4.2.3(99f93b3180609ff6ac86f3421c5725cd):
     dependencies:
       '@nuxt/devalue': 2.0.2
       '@nuxt/kit': 4.5.2(magic-string@1.3.1)(magicast@0.5.5)(rolldown@1.2.8)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.2)(vite@8.3.0(@types/node@22.20.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))
@@ -10789,7 +10784,7 @@ snapshots:
       defu: 6.1.7
       h3: 1.15.11
       nuxt-site-config-kit: 4.2.3(magic-string@1.3.1)(magicast@0.5.5)(rolldown@1.2.8)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.2)(vite@8.3.0(@types/node@22.20.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))(vue@3.5.42(typescript@6.0.3))
-      nuxtseo-shared: 5.3.16(6a4c1aed85c6772971437b995b7f2228)
+      nuxtseo-shared: 5.3.16(bc8332efffacffa608f65b8fdcf5a684)
       pathe: 2.0.3
       pkg-types: 2.3.3
       site-config-stack: 4.2.3(vue@3.5.42(typescript@6.0.3))
@@ -10947,7 +10942,7 @@ snapshots:
       - xml2js
       - yaml
 
-  nuxtseo-shared@5.3.16(6a4c1aed85c6772971437b995b7f2228):
+  nuxtseo-shared@5.3.16(bc8332efffacffa608f65b8fdcf5a684):
     dependencies:
       '@clack/prompts': 1.8.0
       '@nuxt/devtools-kit': 4.0.0-alpha.7(magic-string@1.3.1)(magicast@0.5.5)(rolldown@1.2.8)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.2)(vite@8.3.0(@types/node@22.20.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))(vite@8.3.0(@types/node@22.20.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
@@ -10967,8 +10962,8 @@ snapshots:
       ufo: 1.6.4
       vue: 3.5.42(typescript@6.0.3)
     optionalDependencies:
-      nuxt-site-config: 4.2.3(39ba541c9e24139d7107ef882badd6bc)
-      zod: 4.6.2
+      nuxt-site-config: 4.2.3(99f93b3180609ff6ac86f3421c5725cd)
+      zod: 4.6.4
     transitivePeerDependencies:
       - magic-string
       - magicast
@@ -12077,8 +12072,6 @@ snapshots:
 
   undici@7.29.0: {}
 
-  undici@7.29.1: {}
-
   undici@8.10.2: {}
 
   unenv@2.0.0-rc.24:
@@ -12595,6 +12588,6 @@ snapshots:
       compress-commons: 6.0.2
       readable-stream: 4.7.0
 
-  zod@4.6.2: {}
+  zod@4.6.4: {}
 
   zwitch@2.0.4: {}

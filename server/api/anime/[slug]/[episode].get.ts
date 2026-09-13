@@ -72,9 +72,10 @@ defineRouteMeta({
                         type: "object",
                         properties: {
                           name: { type: "string" },
-                          url: { type: "string" }
+                          url: { type: "string" },
+                          type: { type: "string" },
                         },
-                        required: ["name", "url"]
+                        required: ["name", "url", "type"]
                       }
                     },
                     downloads: {
@@ -83,9 +84,10 @@ defineRouteMeta({
                         type: "object",
                         properties: {
                           name: { type: "string" },
-                          url: { type: "string" }
+                          url: { type: "string" },
+                          type: { type: "string" }
                         },
-                        required: ["name", "url"]
+                        required: ["name", "url", "type"]
                       }
                     }
                   },
